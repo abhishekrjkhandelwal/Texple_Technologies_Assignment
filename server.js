@@ -1,4 +1,7 @@
-let app = require('express')(),
+const app = require('express'),
+
+const express = express();
+
 
     server = require('http').Server(app),
     bodyParser = require('body-parser'),
