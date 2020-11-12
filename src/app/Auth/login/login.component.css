@@ -1,0 +1,30 @@
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.main-div {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card {
+  border-radius: 5%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+button {
+  width: 100%;
+}
+
+mat-card-header {
+  margin-left: 35%;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}

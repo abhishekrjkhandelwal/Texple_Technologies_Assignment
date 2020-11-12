@@ -1,0 +1,46 @@
+<mat-card class="main-div">
+  <mat-card-content>
+  <mat-card-header>
+    <h2>Add User</h2>
+  </mat-card-header>
+  <form [formGroup]="addForm" (ngSubmit) = "onSubmit()">
+          <mat-form-field>
+            <input type="text" matInput  placeholder="Name" name="name" formControlName ="name" [ngClass] = "{'is-invalid': (submitted || addForm.controls.name.touched) && addForm.controls.name.errors }" required>
+            <mat-error>
+              <div *ngIf="addForm.value.name.length != 0">
+                <div *ngIf="(( submitted || addForm.controls.name.touched) && addForm.controls.name.errors),"  class="invalid-input">Enter Valid Name</div>
+              </div>
+              <div *ngIf="addForm.controls.name.errors?.required">Name is required</div>
+            </mat-error>
+          </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput  placeholder="Email" name="email" formControlName ="email" [ngClass] = "{'is-invalid': (submitted || addForm.controls.email.touched) && addForm.controls.email.errors }" required>
+      <mat-error>
+        <div *ngIf="addForm.value.email.length != 0">
+          <div *ngIf="((submitted || addForm.controls.email.touched) && addForm.controls.email.errors),"  class="invalid-input">Enter Valid Email</div>
+        </div>
+        <div *ngIf="addForm.controls.email.errors?.required">Email is required</div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" name="password" formControlName ="password" [ngClass] = "{'is-invalid': (submitted || addForm.controls.password.touched) && addForm.controls.password.errors }" required>
+      <mat-error>
+        <div *ngIf="addForm.value.password.length != 0">
+          <div *ngIf="((submitted || addForm.controls.password.touched) && addForm.controls.password.errors),"  class="invalid-input">Enter Valid Password</div>
+        </div>
+        <div *ngIf="addForm.controls.password.errors?.required">Passwword is required</div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Mobile No" name="mobileno" formControlName ="mobileno" [ngClass] = "{'is-invalid': (submitted || addForm.controls.mobileno.touched) && addForm.controls.mobileno.errors }" required>
+      <mat-error>
+        <div *ngIf="addForm.value.mobileno.length != 0">
+          <div *ngIf="((submitted || addForm.controls.mobileno.touched) && addForm.controls.mobileno.errors),"  class="invalid-input">Enter Valid Mobile Number</div>
+        </div>
+        <div *ngIf="addForm.controls.mobileno.errors?.required">Mobile Number is required</div>
+      </mat-error>
+    </mat-form-field>
+    <button class="button" mat-raised-button color="primary"  type="submit">Submit</button>
+  </form>
+</mat-card-content>
+</mat-card>

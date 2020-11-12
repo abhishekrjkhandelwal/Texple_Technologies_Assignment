@@ -1,0 +1,26 @@
+<div class="main-div">
+<mat-card>
+  <mat-card-header>Login</mat-card-header>
+  <form [formGroup] = "loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field>
+      <input matInput name="email" formControlName="email" type="email" placeholder="E-Mail" [ngClass] = "{'is-invalid': (submitted || loginForm.controls.email.touched) && loginForm.controls.email.errors }" />
+      <mat-error>
+        <div *ngIf="loginForm.value.email.length != 0">
+          <div *ngIf="((submitted || loginForm.controls.email.touched) && loginForm.controls.email.errors),"  class="invalid-input">Enter Valid Email Id</div>
+        </div>
+        <div *ngIf="loginForm.controls.email.errors?.required">Email is required</div>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput  name="password" formControlName="password" type="password"  placeholder="Password" [ngClass] = "{'is-invalid': (submitted || loginForm.controls.password.touched) && loginForm.controls.password.errors }">
+      <mat-error>
+        <div *ngIf="loginForm.value.password.length != 0">
+          <div *ngIf="((submitted || loginForm.controls.password.touched) && loginForm.controls.password.errors)" class="invalid-input">Enter Valid Password</div>
+        </div>
+        <div *ngIf="loginForm.controls.password.errors?.required">Password is required</div>
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onLogin();" [disabled]="(loginForm.value.length === 0)" type="submit" *ngIf="!isLoading">Login</button>
+  </form>
+</mat-card>
+</div>

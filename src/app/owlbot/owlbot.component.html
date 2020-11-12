@@ -1,0 +1,13 @@
+<h1>Texple Dictionary</h1>
+
+<mat-card>
+<form class="example-form" [formGroup]="wordForm" (ngSubmit) = "onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Word</mat-label>
+      <input matInput formControlName="wordInput" placeholder="Search a word" [(ngModel)] = "wordInput">
+    </mat-form-field>
+    <h3 *ngFor= " let def of definition"><label>definition: </label>{{ def["definition"] | json}}</h3>
+    <h3 *ngFor= " let def of definition"><label>examples: </label>{{ def["example"] | json}}</h3> 
+    <!-- <button class="button" mat-raised-button color="primary"  type="submit">Submit</button> -->
+  </form>
+</mat-card>

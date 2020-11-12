@@ -1,0 +1,44 @@
+<div class="main-div">
+<mat-card>
+  <mat-card-header>SignUp</mat-card-header>
+  <form [formGroup] = "registerForm" (ngSubmit)="onSignup()">
+    <mat-form-field>
+      <input matInput name="name" formControlName="name" type="name" placeholder="Username" [ngClass] = "{'is-invalid': (submitted || registerForm.controls.name.touched) && registerForm.controls.name.errors }" />
+        <mat-error>
+          <div *ngIf="registerForm.value.name.length != 0">
+            <div *ngIf="((submitted || registerForm.controls.name.touched) && registerForm.controls.name.errors)" class="invalid-input"></div>
+          </div>
+          <div *ngIf="registerForm.controls.name.errors?.required">Name is required</div>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="email" formControlName="email" type="email" placeholder="E-Mail" [ngClass] = "{'is-invalid': (submitted || registerForm.controls.email.touched) && registerForm.controls.email.errors }" />
+        <mat-error>
+          <div *ngIf="registerForm.value.email.length != 0">
+             <div *ngIf="((submitted || registerForm.controls.email.touched) && registerForm.controls.email.errors)" class="invalid-input"></div>
+          </div>
+          <div *ngIf="registerForm.controls.email.errors?.required">Email is required</div>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput  name="password" formControlName="password" type="password"  placeholder="Password" [ngClass] = "{'is-invalid': (submitted || registerForm.controls.password.touched) && registerForm.controls.password.errors }">
+        <mat-error>
+          <div *ngIf="registerForm.value.password.length != 0">
+            <div *ngIf="((submitted || registerForm.controls.password.touched) && registerForm.controls.password.errors)" class="invalid-input"></div>
+          </div>
+          <div *ngIf="registerForm.controls.password.errors?.required">Password is required</div>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput name="cpassword" formControlName="cpassword" type="password" placeholder="Confirm Password" [ngClass] = "{'is-invalid': (submitted || registerForm.controls.cpassword.touched) && registerForm.controls.cpassword.errors }" />
+          <mat-error>
+            <div *ngIf="registerForm.value.cpassword.length != 0">
+               <div *ngIf="((submitted || registerForm.controls.cpassword.touched) && registerForm.controls.cpassword.errors)" class="invalid-input"></div>
+            </div>
+            <div *ngIf="registerForm.controls.cpassword.errors?.required">Confirm Password is required</div>
+          </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="(registerForm.value.length === 0)" *ngIf="!isLoading">Signup</button>
+  </form>
+</mat-card>
+</div>

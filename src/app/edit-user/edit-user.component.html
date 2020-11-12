@@ -1,0 +1,38 @@
+<form [formGroup]="editform"  class="id">
+  <h2>Enter ID</h2>
+  <mat-form-field>
+    <input matInput type="text"  formControlName="id" #id required>
+    <mat-error><div *ngIf="editform.controls.id.errors?.required">ID is required</div></mat-error>
+  </mat-form-field>
+  <button  mat-raised-button color="primary" type="submit" (click)="getUserByID(id.value)">Submit</button>
+</form>
+
+<div class="main-div">
+<mat-card *ngIf="edited == true">
+  <h2>Edit User</h2>
+  <form [formGroup]="editform" (ngSubmit)="onUpdate()">
+    <mat-form-field>
+      <input matInput type="text"   formControlName="id" value= "{{ value.id }}" required>
+   </mat-form-field>
+
+  <mat-form-field>
+   <input type="text" matInput  formControlName="email" value= "{{ value.email }}" required>
+  </mat-form-field>
+
+ <mat-form-field>
+  <input type="text" matInput  formControlName="name" value = "{{value.name}}" required>
+ </mat-form-field>
+
+ <mat-form-field>
+   <input type="password" matInput formControlName="password" value = "{{value.password}}" required>
+  </mat-form-field>
+
+<mat-form-field>
+    <input type="text" matInput formControlName="mobileno" value = "{{value.mobileno}}" required>
+  </mat-form-field>
+
+   <button mat-raised-button color="primary" type="submit" >Update </button>
+  </form>
+
+</mat-card >
+
