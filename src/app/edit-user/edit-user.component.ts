@@ -35,9 +35,9 @@ export class EditUserComponent implements OnInit {
     }
 
     // get user by id form user service
-    getUserByID() {
+    getUserByID(value) {
      this.edited = true;
-     this.userService.getUserById(this.editform.value.id).subscribe( data => {
+     this.userService.getUserById(value).subscribe( data => {
         this.value = data[0];
      });
     }
