@@ -1,6 +1,6 @@
-const app = require('express');
+let app = require('express');
 
-const express = express();
+let express = express();
 
 
     server = require('http').Server(app),
