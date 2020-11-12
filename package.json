@@ -2,13 +2,14 @@
   "name": "employees",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
+    },
+
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
@@ -33,6 +34,7 @@
     "owlbot-js": "^2.0.2",
     "rxjs": "~6.4.0",
     "safe-regex": "^1.1.0",
+    "serve": "^11.3.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
