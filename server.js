@@ -37,7 +37,7 @@ const express = express();
  app.use(express.static(__dirname + '/dist/Texple_Technologies_Assignment'));
 
  app.get('*', function(req, res) {
-   res.sendFile(path.join(__dirname, '/dist/Texple_Technologies_Assignment/index.html'));
+   res.sendFile(path.join(__dirname + '/dist/Texple_Technologies_Assignment/index.html'));
  });
 
     var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
