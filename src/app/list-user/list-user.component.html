@@ -29,7 +29,7 @@
   <div class="dID">
     <h3>Delete User By ID</h3>
     <mat-form-field>
-      <input matInput type="text" placeholder="ID" name="EnterID" #dID>
+      <input matInput type="number" placeholder="ID" name="EnterID" #dID>
     </mat-form-field>
   <button mat-raised-button color="primary"  [disabled]="(dID.value.length === 0)" (click) = "deleteByID(dID.value)" >Delete User</button>
 </div>

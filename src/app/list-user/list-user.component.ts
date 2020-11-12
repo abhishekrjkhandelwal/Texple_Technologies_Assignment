@@ -62,8 +62,10 @@ export class ListUserComponent implements OnInit {
 
   // delete user by id
  deleteByID(value) {
-  for (const u of this.user) {
-    if (u.id === value) {
+   console.log('valllllllllllllllll', value);
+  for (let u of this.user) {
+    if (u.id == value) {
+      console.log('uuuuuuuiddddd' , u.id)
       this.userService.deleteUserById(value)
       .subscribe(successCode => {
            this.removeFromList(value);

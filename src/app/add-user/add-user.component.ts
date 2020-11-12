@@ -20,9 +20,8 @@ export class AddUserComponent implements OnInit {
 // object of form group
  addForm = new FormGroup({
     email : new FormControl('', Validators.pattern(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,63})$/)),
-    password: new FormControl('', Validators.pattern('(?=.{8,})')),
+    password: new FormControl('', Validators.minLength(8)),
     name: new FormControl('', Validators.pattern(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/)),
-    mobileno: new FormControl('',  Validators.pattern(/^((\+){1}91){1}[1-9]{1}[0-9]{9}$/)),
   });
 
   ngOnInit() {

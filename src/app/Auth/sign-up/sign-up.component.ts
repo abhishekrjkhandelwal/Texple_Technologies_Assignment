@@ -65,21 +65,18 @@ export class SignUpComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.registerForm.value.password === this.registerForm.value.cpassword) {
-       // tslint:disable-next-line: max-line-length
-       console.log('rf' + this.registerForm.value.name);
-       console.log('rf' + this.registerForm.value.email);
-       console.log('rf' + this.registerForm.value.password);
        
-       this.authService.createUser( this.registerForm.value.name, this.registerForm.value.email, this.registerForm.value.password);
-       this.authService.getCode().subscribe( code => {
-        this.code = code.number;
-        if (this.code === 200) {
-          this.router.navigate(['/login']);
+       this.authService.createUser( this.registerForm.value.name, this.registerForm.value.email, this.registerForm.value.password).subscribe(response => {
+      
+        if(response.code == 200) {
           this.validRegisterOpenSnackbar();
-          } else {
-          this.invalidRegisterOpenSnackbar();
-          }
-       });
+          this.router.navigate(['/login']);
+               }
+        else {
+           this.invalidRegisterOpenSnackbar();
+        }
+               
+        });
     }
    }
 }

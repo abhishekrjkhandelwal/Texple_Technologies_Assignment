@@ -39,10 +39,7 @@ export class AuthService {
   createUser(name: string, email: string, password: string) {
     const userData: User = {name, email, password};
     console.log(userData);
-    this.http.post<{code: number}>(this.baseUrl + '/signup', userData)
-      .subscribe(response => {
-           this.sendCode(response.code);
-      });
+    return this.http.post<{code: number}>(this.baseUrl + '/signup', userData);
   }
 
   // http client api for login

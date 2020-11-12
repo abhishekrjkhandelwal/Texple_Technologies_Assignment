@@ -17,7 +17,7 @@ export class OwlbotComponent implements OnInit {
 
  // object of form group
  wordForm = new FormGroup({
-  wordInput : new FormControl(),
+  wordInput : new FormControl(Validators.required, Validators.pattern(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/)),
 });
 
   
