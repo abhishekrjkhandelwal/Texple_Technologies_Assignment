@@ -1,9 +1,9 @@
 //var config = require("nfig").config;
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'us-cdbr-iron-east-02.cleardb.net',
     user: 'abhishek',
-    password: 'A889026a@123',
+    password: 'A88902616a',
     database: 'user',
 });
 
