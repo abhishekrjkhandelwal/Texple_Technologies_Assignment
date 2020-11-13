@@ -1,6 +1,6 @@
 module.exports = {
-    HOST: "us-cdbr-iron-east-02.cleardb.net",
-    USER: "abhishek",
-    PASSWORD: "A88902616a",
-    DB: "user"
+    HOST: "localhost",
+    USER: "id15390700_localhost",
+    PASSWORD: "A88902616a@123",
+    DB: "id15390700_user"
   };
