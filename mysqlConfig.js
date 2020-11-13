@@ -1,10 +1,12 @@
 //var config = require("nfig").config;
 var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'us-cdbr-iron-east-02.cleardb.net',
-    user: 'b7e2437887xxxa',
-    password: '0200xxx6',
-    database: 'heroku_7643ec736354xxx',
+var dbConfig = require('./db');
+
+var connection = mysql.createPool({
+  host: dbConfig.HOST,
+  user: dbConfig.USER,
+  password: dbConfig.PASSWORD,
+  database: dbConfig.DB
 });
 
 
